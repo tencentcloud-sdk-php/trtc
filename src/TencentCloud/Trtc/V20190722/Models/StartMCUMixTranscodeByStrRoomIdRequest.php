@@ -18,12 +18,12 @@ namespace TencentCloud\Trtc\V20190722\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * StartMCUMixTranscode请求参数结构体
+ * StartMCUMixTranscodeByStrRoomId请求参数结构体
  *
  * @method integer getSdkAppId() 获取TRTC的SDKAppId。
  * @method void setSdkAppId(integer $SdkAppId) 设置TRTC的SDKAppId。
- * @method integer getRoomId() 获取房间号。
- * @method void setRoomId(integer $RoomId) 设置房间号。
+ * @method string getStrRoomId() 获取字符串房间号。
+ * @method void setStrRoomId(string $StrRoomId) 设置字符串房间号。
  * @method OutputParams getOutputParams() 获取混流输出控制参数。
  * @method void setOutputParams(OutputParams $OutputParams) 设置混流输出控制参数。
  * @method EncodeParams getEncodeParams() 获取混流输出编码参数。
@@ -33,7 +33,7 @@ use TencentCloud\Common\AbstractModel;
  * @method PublishCdnParams getPublishCdnParams() 获取第三方CDN转推参数。
  * @method void setPublishCdnParams(PublishCdnParams $PublishCdnParams) 设置第三方CDN转推参数。
  */
-class StartMCUMixTranscodeRequest extends AbstractModel
+class StartMCUMixTranscodeByStrRoomIdRequest extends AbstractModel
 {
     /**
      * @var integer TRTC的SDKAppId。
@@ -41,9 +41,9 @@ class StartMCUMixTranscodeRequest extends AbstractModel
     public $SdkAppId;
 
     /**
-     * @var integer 房间号。
+     * @var string 字符串房间号。
      */
-    public $RoomId;
+    public $StrRoomId;
 
     /**
      * @var OutputParams 混流输出控制参数。
@@ -67,7 +67,7 @@ class StartMCUMixTranscodeRequest extends AbstractModel
 
     /**
      * @param integer $SdkAppId TRTC的SDKAppId。
-     * @param integer $RoomId 房间号。
+     * @param string $StrRoomId 字符串房间号。
      * @param OutputParams $OutputParams 混流输出控制参数。
      * @param EncodeParams $EncodeParams 混流输出编码参数。
      * @param LayoutParams $LayoutParams 混流输出布局参数。
@@ -90,8 +90,8 @@ class StartMCUMixTranscodeRequest extends AbstractModel
             $this->SdkAppId = $param["SdkAppId"];
         }
 
-        if (array_key_exists("RoomId",$param) and $param["RoomId"] !== null) {
-            $this->RoomId = $param["RoomId"];
+        if (array_key_exists("StrRoomId",$param) and $param["StrRoomId"] !== null) {
+            $this->StrRoomId = $param["StrRoomId"];
         }
 
         if (array_key_exists("OutputParams",$param) and $param["OutputParams"] !== null) {
