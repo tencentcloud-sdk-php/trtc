@@ -20,17 +20,41 @@ use TencentCloud\Common\AbstractModel;
 /**
  * MeasureTrtcMcuExternal返回参数结构体
  *
+ * @method array getUsages() 获取应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setUsages(array $Usages) 设置应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getType() 获取用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setType(string $Type) 设置用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
 class MeasureTrtcMcuExternalResponse extends AbstractModel
 {
     /**
+     * @var array 应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Usages;
+
+    /**
+     * @var string 用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Type;
+
+    /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param array $Usages 应用的用量信息数组。
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Type 用户计费类型
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +70,19 @@ class MeasureTrtcMcuExternalResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("Usages",$param) and $param["Usages"] !== null) {
+            $this->Usages = [];
+            foreach ($param["Usages"] as $key => $value){
+                $obj = new OneSdkAppIdTranscodeTimeUsagesNewInfo();
+                $obj->deserialize($value);
+                array_push($this->Usages, $obj);
+            }
+        }
+
+        if (array_key_exists("Type",$param) and $param["Type"] !== null) {
+            $this->Type = $param["Type"];
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }
