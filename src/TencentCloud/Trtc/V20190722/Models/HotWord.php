@@ -18,28 +18,28 @@ namespace TencentCloud\Trtc\V20190722\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DownloadRecognizeVocabV3请求参数结构体
+ * 热词的词和权重
  *
- * @method string getVocabId() 获取<p>词表 id</p>
- * @method void setVocabId(string $VocabId) 设置<p>词表 id</p>
- * @method integer getSdkAppId() 获取<p>客户维度唯一标识</p>
- * @method void setSdkAppId(integer $SdkAppId) 设置<p>客户维度唯一标识</p>
+ * @method string getWord() 获取<p>热词</p>
+ * @method void setWord(string $Word) 设置<p>热词</p>
+ * @method integer getWeight() 获取<p>权重</p>
+ * @method void setWeight(integer $Weight) 设置<p>权重</p>
  */
-class DownloadRecognizeVocabV3Request extends AbstractModel
+class HotWord extends AbstractModel
 {
     /**
-     * @var string <p>词表 id</p>
+     * @var string <p>热词</p>
      */
-    public $VocabId;
+    public $Word;
 
     /**
-     * @var integer <p>客户维度唯一标识</p>
+     * @var integer <p>权重</p>
      */
-    public $SdkAppId;
+    public $Weight;
 
     /**
-     * @param string $VocabId <p>词表 id</p>
-     * @param integer $SdkAppId <p>客户维度唯一标识</p>
+     * @param string $Word <p>热词</p>
+     * @param integer $Weight <p>权重</p>
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class DownloadRecognizeVocabV3Request extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("VocabId",$param) and $param["VocabId"] !== null) {
-            $this->VocabId = $param["VocabId"];
+        if (array_key_exists("Word",$param) and $param["Word"] !== null) {
+            $this->Word = $param["Word"];
         }
 
-        if (array_key_exists("SdkAppId",$param) and $param["SdkAppId"] !== null) {
-            $this->SdkAppId = $param["SdkAppId"];
+        if (array_key_exists("Weight",$param) and $param["Weight"] !== null) {
+            $this->Weight = $param["Weight"];
         }
     }
 }
